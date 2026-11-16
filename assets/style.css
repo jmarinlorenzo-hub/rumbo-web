@@ -46,9 +46,11 @@ a:hover { text-decoration-thickness: 2px; }
 .site-header nav { display: flex; gap: 0.25rem 1rem; }
 .site-header nav a { color: var(--gold); text-decoration: none; padding: 0.5rem 0.15rem; font-weight: 600; }
 .site-header nav a:hover { text-decoration: underline; }
-.lang { border: 1px solid rgba(227, 188, 94, 0.5); border-radius: 999px; padding: 0 0.35rem; }
-.lang a { padding: 0.5rem 0.55rem !important; }
-.lang a[aria-current="page"] { color: #10253f; background: var(--gold); border-radius: 999px; padding: 0.15rem 0.55rem !important; text-decoration: none !important; }
+/* Language pill: every link is a flex box with the same height, so EN and ES (active or not)
+   are centred vertically. */
+.lang { display: flex; align-items: center; gap: 0.15rem; border: 1px solid rgba(227, 188, 94, 0.5); border-radius: 999px; padding: 0.2rem; }
+.lang a { display: inline-flex; align-items: center; justify-content: center; min-height: 2.3rem; min-width: 2.5rem; padding: 0 0.6rem !important; line-height: 1; border-radius: 999px; }
+.lang a[aria-current="page"] { color: #10253f; background: var(--gold); text-decoration: none !important; }
 
 /* ---- Hero ---- */
 .hero { text-align: center; padding: 3rem 0 2rem; }
@@ -110,17 +112,17 @@ code { font: 0.92em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
   .brand img { width: 32px; height: 32px; }
   .site-header nav { gap: 0.1rem 0.5rem; }
   .site-header nav a { font-size: 0.95rem; padding: 0.5rem 0.1rem; }
-  .lang { padding: 0 0.2rem; }
-  .lang a { padding: 0.5rem 0.4rem !important; }
-  .lang a[aria-current="page"] { padding: 0.15rem 0.45rem !important; }
+  .lang { padding: 0.15rem; }
+  .lang a { min-height: 2.2rem; min-width: 2.1rem; padding: 0 0.4rem !important; }
 
   .hero { padding-top: 2rem; }
   .btn { width: 100%; justify-content: center; }
   .actions { flex-direction: column; align-items: stretch; }
 }
 
-/* Very narrow phones (320 px): the name goes, the emblem stays. */
-@media (max-width: 21rem) {
+/* Under 400 px (a 360 px phone included): the name goes, the emblem stays, so the brand
+   never touches "Manual". */
+@media (max-width: 25rem) {
   .brand span { display: none; }
 }
 
