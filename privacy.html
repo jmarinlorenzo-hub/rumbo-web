@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy – Rumbo</title>
+<meta name="description" content="Privacy policy of Rumbo, the podcast player for Android: no accounts, analytics or ads, and no data collected.">
+<meta name="theme-color" content="#17406E">
+<link rel="canonical" href="https://jmarinlorenzo-hub.github.io/rumbo-web/privacy.html">
+<link rel="alternate" hreflang="en" href="https://jmarinlorenzo-hub.github.io/rumbo-web/privacy.html">
+<link rel="alternate" hreflang="es" href="https://jmarinlorenzo-hub.github.io/rumbo-web/es/privacy.html">
+<link rel="icon" type="image/png" href="assets/icon-512.png">
+<link rel="apple-touch-icon" href="assets/icon-512.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="index.html"><img src="assets/emblem.svg" alt="" width="40" height="40"><span>Rumbo</span></a>
+    <nav aria-label="Main">
+      <a href="manual.html">Manual</a>
+      <a href="privacy.html" aria-current="page">Privacy</a>
+    </nav>
+    <nav class="lang" aria-label="Language">
+      <a href="privacy.html" lang="en" hreflang="en" aria-current="page">EN</a>
+      <a href="es/privacy.html" lang="es" hreflang="es">ES</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap doc">
+    <h1>Privacy policy</h1>
+    <p class="lead">Effective date: 16 November 2026. This policy covers the Rumbo app for Android and this website.</p>
+
+    <p class="note"><strong>In short:</strong> Rumbo has no accounts, no analytics, no advertising and no crash-reporting service. It does not collect your data and the developer never receives it. The app only connects to Apple's public iTunes services and to the servers of the podcasts you choose. Everything else stays on your phone.</p>
+
+    <h2 id="who">1. Who is responsible</h2>
+    <p>Rumbo is developed by an individual developer. For any question about this policy, write to <a href="mailto:rumbo.podcast.app@gmail.com">rumbo.podcast.app@gmail.com</a>.</p>
+
+    <h2 id="on-device">2. What stays on your phone</h2>
+    <p>Rumbo stores this in its own app storage, on your phone only:</p>
+    <ul>
+      <li>your subscriptions and their options, topics and playlists;</li>
+      <li>what you have played and where you stopped;</li>
+      <li>your settings (language, playback, downloads…);</li>
+      <li>downloaded episodes, podcast covers and the audio of your clips;</li>
+      <li>the backup files you create, in the place you choose.</li>
+    </ul>
+    <p>None of this is sent to the developer or to any server of ours: there are none.</p>
+
+    <h2 id="connections">3. Connections the app makes</h2>
+    <h3>3.1 Podcast servers</h3>
+    <p>When you subscribe, refresh (by hand, or once a day if you leave the daily update on), download or stream, Rumbo connects directly to the server that hosts that podcast's feed, audio and cover. Those servers receive standard request information such as your IP address and the app's user agent. Many podcasts route their audio through hosting or audience-measurement services chosen by the podcast's publisher, and those services receive the request too. Covers are downloaded and checked again about once a week. Each server's own privacy policy applies.</p>
+    <p>Rumbo allows unencrypted (http) connections because many podcasts are only available that way. On such connections, someone on the same network could see which podcast you are fetching.</p>
+    <h3>3.2 Apple (iTunes)</h3>
+    <p>Rumbo uses Apple's public iTunes search and chart services:</p>
+    <ul>
+      <li><strong>Search</strong> (Subscribe): the words you type and your phone's country.</li>
+      <li><strong>Suggestions</strong> (Subscribe): the category you tap and the country you choose.</li>
+      <li><strong>Organize by category</strong> (Settings), only if you use it: the titles of those of your podcasts whose feed does not state a category, to look up their genre.</li>
+    </ul>
+    <p>Apple also receives your IP address. Rumbo sends no account, device identifier or advertising identifier, and does not save your searches. Apple's privacy policy applies to its services.</p>
+    <h3>3.3 Nothing else</h3>
+    <p>Rumbo contains no analytics, advertising, social or crash-reporting libraries, and does not use Google or Firebase services.</p>
+
+    <h2 id="backups">4. Downloads, clips and backups are local</h2>
+    <p>Downloads and clips are files on your phone. Rumbo's backup (Settings › Backup &amp; Restore) writes a .zip file where you choose, and the optional weekly copy goes to the folder you choose. Rumbo does not upload them anywhere. The file contains your subscriptions' addresses, listening state, topics, playlists, settings and clips, so keep it somewhere you trust; if the folder you pick is synced by another service, that service handles it.</p>
+    <p>Rumbo does not take part in Android's cloud backup nor in the transfer of app data to a new phone: both are switched off. To move to another phone, use Rumbo's own backup.</p>
+
+    <h2 id="sharing">5. Sharing</h2>
+    <p>Rumbo only shares something when you ask it to: sharing a clip (the audio file and a text with the episode, podcast and times) or exporting your subscriptions as OPML. The data goes to the app or place you pick in Android's share dialog or file picker.</p>
+
+    <h2 id="permissions">6. Permissions</h2>
+    <ul class="perms">
+      <li><code>INTERNET</code> — to load feeds and covers, search and get suggestions, download and stream.</li>
+      <li><code>ACCESS_NETWORK_STATE</code> — to know whether you are online and on Wi-Fi, so downloads and streaming follow your settings.</li>
+      <li><code>POST_NOTIFICATIONS</code> — to show the playback controls and the progress of downloads (asked on Android 13 and later; optional).</li>
+      <li><code>FOREGROUND_SERVICE</code> and <code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code> — to keep playing with the screen off, with lock-screen and Bluetooth controls.</li>
+      <li><code>FOREGROUND_SERVICE_DATA_SYNC</code> — to finish the downloads you request in the background, with a progress notification.</li>
+      <li><code>WAKE_LOCK</code> — to keep the phone awake while it plays, streams or downloads.</li>
+      <li><code>RECEIVE_BOOT_COMPLETED</code> — added by Android's WorkManager library, so the daily update stays scheduled after the phone restarts.</li>
+    </ul>
+    <p>Android's libraries also add an internal permission that only protects Rumbo's own broadcasts; it gives access to nothing. Rumbo does not ask for access to your contacts, location, camera, microphone, photos or general storage: files for backups and OPML are chosen with Android's own file picker, and Rumbo only gets the file or folder you pick.</p>
+
+    <h2 id="website">7. This website</h2>
+    <p>This website is static: it uses no cookies, no analytics, no tracking scripts and no content from other sites (fonts and images are served from the site itself). It is hosted on GitHub Pages, which, like any host, may process visitors' IP addresses (see GitHub's privacy statement). The links to Buy Me a Coffee and GitHub open those sites, which have their own policies.</p>
+
+    <h2 id="retention">8. Keeping and deleting your data</h2>
+    <p>Because Rumbo does not collect your data, there is nothing for the developer to access, correct or delete. On your phone, you can delete downloads and clips in the app, and uninstalling Rumbo removes everything it stored. Backup and export files you created elsewhere stay until you delete them. For data held by Apple or by a podcast's server, contact them.</p>
+
+    <h2 id="children">9. Children</h2>
+    <p>Rumbo is not directed at children and collects no data from anyone.</p>
+
+    <h2 id="changes">10. Changes</h2>
+    <p>If this policy changes, the new version will be published on this page with its date.</p>
+
+    <h2 id="contact">11. Contact</h2>
+    <p><a href="mailto:rumbo.podcast.app@gmail.com">rumbo.podcast.app@gmail.com</a></p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Contact: <a href="mailto:rumbo.podcast.app@gmail.com">rumbo.podcast.app@gmail.com</a></p>
+    <p><a href="privacy.html">Privacy policy</a> · <a href="manual.html">Manual</a> · <a href="https://github.com/jmarinlorenzo-hub" rel="noopener">GitHub</a></p>
+    <p class="small">Rumbo is an independent app, not affiliated with Apple or Google. Podcast search and charts come from Apple's public iTunes services.</p>
+  </div>
+</footer>
+</body>
+</html>
