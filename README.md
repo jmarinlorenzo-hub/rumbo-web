@@ -32,12 +32,13 @@ Written directly in the HTML (no scripts). To change them, use "Replace in files
 
 ## Screenshots
 
-The home pages show four placeholders: `assets/screens/screen-1.placeholder.svg` to
-`screen-4.placeholder.svg` (Podcasts, Playlists, Player, Subscribe; about 9:19 portrait).
+The home pages show five screenshots: `assets/screens/screen-1-en.jpg` to `screen-5-en.jpg`
+(English page) and `screen-1-es.jpg` to `screen-5-es.jpg` (Spanish page). They are reduced
+copies (540x960 JPG, under 150 KB each) so the site loads fast.
 
-1. Save your real screenshots as `assets/screens/screen-1.png` ... `screen-4.png`.
-2. In `index.html` and `es/index.html`, replace `.placeholder.svg` with `.png`.
-3. Delete the placeholder files.
+The full-size originals (1080x1920 PNG) are in `assets/screens/originals/`, which is in
+`.gitignore`: they stay on this computer and are not published. To change a screenshot,
+reduce the new one the same way and overwrite the matching `screen-N-xx.jpg`.
 
 ## Google Play button
 

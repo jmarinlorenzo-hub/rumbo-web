@@ -88,9 +88,7 @@ h3 { font-size: 1.15rem; margin: 1.6rem 0 0.5rem; }
 @media (prefers-color-scheme: light) { .features strong { color: var(--navy); } }
 
 .shots { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); margin: 0; padding: 0; list-style: none; }
-.shots figure { margin: 0; text-align: center; }
-.shots img { width: 100%; aspect-ratio: 9 / 19; object-fit: cover; border-radius: 1.2rem; border: 1px solid var(--border); background: var(--surface); }
-.shots figcaption { color: var(--muted); font-size: 0.9rem; margin-top: 0.4rem; }
+.shots img { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 1rem; border: 1px solid var(--border); background: var(--surface); }
 
 /* ---- Document pages (manual, privacy) ---- */
 .doc { max-width: 46rem; padding-top: 2rem; padding-bottom: 2.5rem; }
