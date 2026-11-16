@@ -1,5 +1,5 @@
-/* Rumbo website. Navy #17406E and gold #E3BC5E (the logo's colours), dark by default,
-   light when the visitor's system asks for it. No frameworks, no scripts. */
+/* Rumbo website. Navy #17406E and gold #E3BC5E (the logo's colours), always dark like the
+   app. No frameworks, no scripts. */
 
 :root {
   --navy: #17406e;
@@ -14,19 +14,7 @@
   --link: #e3bc5e;
   --border: rgba(227, 188, 94, 0.28);
   --shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
-  color-scheme: dark light;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --bg: #f6f4ee;
-    --surface: #ffffff;
-    --text: #10253f;
-    --muted: #4a5b73;
-    --link: #17406e;
-    --border: rgba(23, 64, 110, 0.22);
-    --shadow: 0 6px 24px rgba(16, 37, 63, 0.12);
-  }
+  color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
@@ -51,7 +39,8 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* ---- Header: always navy, in both colour schemes ---- */
 .site-header { background: var(--navy); color: #f2f5fa; border-bottom: 3px solid var(--gold); }
-.site-header .bar { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 1.25rem; padding-top: 0.6rem; padding-bottom: 0.6rem; }
+/* One row, also on phones: brand on the left, Manual, Privacy and the language switch on the right. */
+.site-header .bar { display: flex; flex-wrap: nowrap; align-items: center; gap: 0.4rem 1.25rem; padding-top: 0.6rem; padding-bottom: 0.6rem; }
 .brand { display: inline-flex; align-items: center; gap: 0.6rem; color: #f2f5fa; font-size: 1.35rem; font-weight: 700; letter-spacing: 0.02em; text-decoration: none; margin-right: auto; }
 .brand img { width: 40px; height: 40px; }
 .site-header nav { display: flex; gap: 0.25rem 1rem; }
@@ -79,15 +68,14 @@ a:hover { text-decoration-thickness: 2px; }
 /* ---- Sections ---- */
 section { padding: 1.6rem 0; }
 h2 { font-size: clamp(1.4rem, 4.5vw, 1.8rem); line-height: 1.25; margin: 0 0 1rem; color: var(--gold); }
-@media (prefers-color-scheme: light) { h2 { color: var(--navy); } }
 h3 { font-size: 1.15rem; margin: 1.6rem 0 0.5rem; }
 
 .features { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); list-style: none; padding: 0; margin: 0; }
 .features li { background: var(--surface); border: 1px solid var(--border); border-radius: 1rem; padding: 1rem 1.1rem; }
 .features strong { display: block; color: var(--gold); margin-bottom: 0.2rem; }
-@media (prefers-color-scheme: light) { .features strong { color: var(--navy); } }
 
 .shots { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); margin: 0; padding: 0; list-style: none; }
+.shots a { display: block; cursor: zoom-in; border-radius: 1rem; }
 .shots img { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 1rem; border: 1px solid var(--border); background: var(--surface); }
 
 /* ---- Document pages (manual, privacy) ---- */
@@ -116,9 +104,24 @@ code { font: 0.92em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 .skip:focus { left: 0; }
 
 @media (max-width: 30rem) {
+  /* Compact header so everything stays in one row on a 360 px phone. */
+  .site-header .bar { gap: 0.25rem 0.5rem; }
+  .brand { font-size: 1.1rem; gap: 0.4rem; }
+  .brand img { width: 32px; height: 32px; }
+  .site-header nav { gap: 0.1rem 0.5rem; }
+  .site-header nav a { font-size: 0.95rem; padding: 0.5rem 0.1rem; }
+  .lang { padding: 0 0.2rem; }
+  .lang a { padding: 0.5rem 0.4rem !important; }
+  .lang a[aria-current="page"] { padding: 0.15rem 0.45rem !important; }
+
   .hero { padding-top: 2rem; }
   .btn { width: 100%; justify-content: center; }
   .actions { flex-direction: column; align-items: stretch; }
+}
+
+/* Very narrow phones (320 px): the name goes, the emblem stays. */
+@media (max-width: 21rem) {
+  .brand span { display: none; }
 }
 
 @media print {
